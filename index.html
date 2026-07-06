@@ -2,11 +2,26 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=https://jewish-applicant-integrate-adoption.trycloudflare.com">
 <title>Redirecting...</title>
-<script>window.location.replace("https://jewish-applicant-integrate-adoption.trycloudflare.com");</script>
 </head>
 <body>
-Redirecting to <a href="https://jewish-applicant-integrate-adoption.trycloudflare.com">https://jewish-applicant-integrate-adoption.trycloudflare.com</a>...
+<p id="status">Loading latest link...</p>
+<script>
+  var rawUrl = "https://raw.githubusercontent.com/jhjgiyyb01/stock-redirect/main/current-url.txt?t=" + Date.now();
+  fetch(rawUrl)
+    .then(function(res) { return res.text(); })
+    .then(function(url) {
+      url = url.trim();
+      if (url) {
+        document.getElementById('status').innerText = "Redirecting to " + url + " ...";
+        window.location.replace(url);
+      } else {
+        document.getElementById('status').innerText = "No link found yet. Start the server first.";
+      }
+    })
+    .catch(function(err) {
+      document.getElementById('status').innerText = "Could not load the latest link. Try again in a moment.";
+    });
+</script>
 </body>
 </html>
